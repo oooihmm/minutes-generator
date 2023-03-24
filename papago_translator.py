@@ -9,14 +9,14 @@ class PapagoTranslator:
         load_dotenv()
         
         self._client_id = os.getenv("PAPAGO_CLIENT_ID", "")
-        self._secret = os.getenv("PAPAGO_CLIENT_SECRET", "")
+        self._client_secret = os.getenv("PAPAGO_CLIENT_SECRET", "")
         self.url = url
 
     def translate_minute(self, summary: str):
         _headers = {
         "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
         "X-NCP-APIGW-API-KEY-ID": self._client_id,
-        "X-NCP-APIGW-API-KEY": self._secret,
+        "X-NCP-APIGW-API-KEY": self._client_secret,
         }
 
         data = {'source':'en', 'target':'ko', 'text': summary}

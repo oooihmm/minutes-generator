@@ -6,10 +6,9 @@ from dotenv import load_dotenv
 class MinuteGenerator:
     def __init__(self):
         load_dotenv()
-
         self._api_key = os.getenv("OPENAI_API_KEY", "")
 
-    def generate_mintue(self, file_name):
+    def generate_minute(self, file_name):
         openai.api_key = self._api_key
 
         try:

@@ -37,7 +37,7 @@ def handle_mentions(body, say):
                         channel=channel)
 
                         generator = MinuteGenerator()
-                        generate_result = generator.generate_mintue(file_name) # 회의록 작성(whisper) / success: return text, fail: return False
+                        generate_result = generator.generate_minute(file_name) # 회의록 작성(whisper) / success: return text, fail: return False
 
                         if generate_result != False:
                             summary_result = generator.summary_minute(generate_result) # 회의록 요약(gpt) / success: return summary, fail: return False
